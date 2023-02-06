@@ -1,0 +1,28 @@
+version: "3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./dev.Dockerfile
+    command: tail -F /dev/null
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules/
+    links:
+      - db
+    environment:
+      PORT: 8000
+      DB_USER: postgres
+      DB_HOST: db
+      DB: cats
+      DB_PASSWORD: mysecretpassword
+      DB_PORT: 5432
+  db:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: "cats"
+      POSTGRES_PASSWORD: mysecretpassword
