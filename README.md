@@ -52,12 +52,12 @@ Run: `npm test`
 
 `[GET]: http://localhost:8000/api/cats/search/:name`
 <br /><br />
-query parameters:
+`query parameters:
 {
-limit?: string
-offset?: string
-order?: ASC | DESC
-}
+    limit?: string
+    offset?: string
+    order?: ASC | DESC
+}`
 <br /><br />
 
 `[GET]: http://localhost:8000/api/cats/:id`
