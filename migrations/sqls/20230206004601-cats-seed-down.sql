@@ -1,0 +1,10 @@
+DELETE FROM cats WHERE name = 'Alfred';
+DELETE FROM cats WHERE name = 'Agur';
+DELETE FROM cats WHERE name = 'Luna';
+DELETE FROM cats WHERE name = 'Tiger';
+DELETE FROM cats WHERE name = 'Bella';
+DELETE FROM cats WHERE name = 'Oreo';
+DELETE FROM cats WHERE name = 'Jasper';
+DELETE FROM cats WHERE name = 'Nala';
+DELETE FROM cats WHERE name = 'Bianca';
+DELETE FROM cats WHERE name = 'Darcy';

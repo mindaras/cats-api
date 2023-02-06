@@ -1,0 +1,10 @@
+INSERT INTO breeds(name) VALUES('Abyssinian');
+INSERT INTO breeds(name) VALUES('Aegean');
+INSERT INTO breeds(name) VALUES('American Bobtail');
+INSERT INTO breeds(name) VALUES('American Curl');
+INSERT INTO breeds(name) VALUES('American Shorthair');
+INSERT INTO breeds(name) VALUES('American Wirehair');
+INSERT INTO breeds(name) VALUES('Arabian Mau');
+INSERT INTO breeds(name) VALUES('Australian Mist');
+INSERT INTO breeds(name) VALUES('Balinese');
+INSERT INTO breeds(name) VALUES('Bambino');

@@ -1,0 +1,10 @@
+DELETE FROM breeds WHERE name = 'Abyssinian';
+DELETE FROM breeds WHERE name = 'Aegean';
+DELETE FROM breeds WHERE name = 'American Bobtail';
+DELETE FROM breeds WHERE name = 'American Curl';
+DELETE FROM breeds WHERE name = 'American Shorthair';
+DELETE FROM breeds WHERE name = 'American Wirehair';
+DELETE FROM breeds WHERE name = 'Arabian Mau';
+DELETE FROM breeds WHERE name = 'Australian Mist';
+DELETE FROM breeds WHERE name = 'Balinese';
+DELETE FROM breeds WHERE name = 'Bambino';

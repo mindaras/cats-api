@@ -1,0 +1,6 @@
+CREATE TABLE cats (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(25) NOT NULL,
+  breedid INT REFERENCES breeds (id) ON DELETE CASCADE,
+  weight INT
+);

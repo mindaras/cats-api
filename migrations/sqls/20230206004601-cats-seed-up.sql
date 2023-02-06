@@ -1,0 +1,10 @@
+INSERT INTO cats(name, breedid, weight) VALUES('Alfred', (SELECT id FROM breeds where name = 'Abyssinian'), 4);
+INSERT INTO cats(name, breedid, weight) VALUES('Agur', (SELECT id FROM breeds where name = 'Aegean'), 6);
+INSERT INTO cats(name, breedid, weight) VALUES('Luna', (SELECT id FROM breeds where name = 'American Bobtail'), 3);
+INSERT INTO cats(name, breedid, weight) VALUES('Tiger', (SELECT id FROM breeds where name = 'American Curl'), 4);
+INSERT INTO cats(name, breedid, weight) VALUES('Bella', (SELECT id FROM breeds where name = 'American Shorthair'), 7);
+INSERT INTO cats(name, breedid, weight) VALUES('Oreo', (SELECT id FROM breeds where name = 'American Wirehair'), 4);
+INSERT INTO cats(name, breedid, weight) VALUES('Jasper', (SELECT id FROM breeds where name = 'Arabian Mau'), 7);
+INSERT INTO cats(name, breedid, weight) VALUES('Nala', (SELECT id FROM breeds where name = 'Australian Mist'), 3);
+INSERT INTO cats(name, breedid, weight) VALUES('Bianca', (SELECT id FROM breeds where name = 'Balinese'), 5);
+INSERT INTO cats(name, breedid, weight) VALUES('Darcy', (SELECT id FROM breeds where name = 'Bambino'), 6);
