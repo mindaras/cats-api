@@ -30,25 +30,6 @@ const getAll: RequestHandler = async (req, res) => {
   }
 };
 
-const get: RequestHandler = async (req, res) => {
-  const { id } = req.params;
-
-  if (!id) return res.status(400).json({ message: "No id was provided" });
-
-  try {
-    const data = await db.querySingle<Cat>(
-      `SELECT cats.id, cats.name, breeds.name AS breed, weight 
-       FROM cats 
-       INNER JOIN breeds ON breeds.id = cats.breedid
-       WHERE cats.id = $1`,
-      [id]
-    );
-    res.json({ data });
-  } catch (e) {
-    res.status(500).json(toErrorResponse(e));
-  }
-};
-
 const search: RequestHandler = async (req, res) => {
   const { name } = req.params;
   const {
@@ -76,6 +57,25 @@ const search: RequestHandler = async (req, res) => {
   }
 };
 
+const get: RequestHandler = async (req, res) => {
+  const { id } = req.params;
+
+  if (!id) return res.status(400).json({ message: "No id was provided" });
+
+  try {
+    const data = await db.querySingle<Cat>(
+      `SELECT cats.id, cats.name, breeds.name AS breed, weight 
+       FROM cats 
+       INNER JOIN breeds ON breeds.id = cats.breedid
+       WHERE cats.id = $1`,
+      [id]
+    );
+    res.json({ data });
+  } catch (e) {
+    res.status(500).json(toErrorResponse(e));
+  }
+};
+
 const remove: RequestHandler = async (req, res) => {
   const { id } = req.params;
 
@@ -91,8 +91,8 @@ const remove: RequestHandler = async (req, res) => {
 
 const catsApi = Router()
   .get("/", getAll)
-  .get("/:id", get)
   .get("/search/:name", search)
+  .get("/:id", get)
   .delete("/:id", remove);
 
 export { catsApi };
