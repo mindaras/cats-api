@@ -70,6 +70,9 @@ const get: RequestHandler = async (req, res) => {
        WHERE cats.id = $1`,
       [id]
     );
+
+    if (!data) return res.sendStatus(404);
+
     res.json({ data });
   } catch (e) {
     res.status(500).json(toErrorResponse(e));
@@ -82,7 +85,13 @@ const remove: RequestHandler = async (req, res) => {
   if (!id) return res.status(400).json({ message: "No id was provided" });
 
   try {
-    await db.querySingle<Cat>(`DELETE FROM cats WHERE id = $1;`, [id]);
+    const data = await db.querySingle<Cat>(
+      `DELETE FROM cats WHERE id = $1 RETURNING id;`,
+      [id]
+    );
+
+    if (!data) return res.sendStatus(404);
+
     res.sendStatus(204);
   } catch (e) {
     res.status(500).json(toErrorResponse(e));
