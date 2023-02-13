@@ -14,7 +14,7 @@
 `npm i` <br />
 `npm run migration:up && npm start` <br />
 
-To stop: `docker-compose stop`npm
+To stop: `docker-compose stop`
 
 Code in your local environment and container will pickup the changes.
 
